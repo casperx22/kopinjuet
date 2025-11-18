@@ -1,0 +1,137 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Times+New+Roman&display=swap');
+
+/* Gaya Umum dan Aksen Jawa */
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #5C4033; /* Coklat tenang */
+    color: #FDF5E6; 
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Aksen Jawa: Ornamen Batik/Ukiran */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Batik_Parang_Rusak.svg/1200px-Batik_Parang_Rusak.svg.png'); 
+    background-size: 150px; 
+    opacity: 0.1; 
+    z-index: -1; 
+    pointer-events: none;
+}
+
+/* Kontainer Halaman Menu */
+.menu-container {
+    background-color: rgba(71, 48, 38, 0.9);
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    max-width: 90%;
+    width: 850px; /* Lebih lebar untuk menampung grid 4 kolom */
+    box-sizing: border-box;
+    border: 2px solid #A0522D;
+}
+
+h2 {
+    color: #FFD700; /* Warna emas untuk judul */
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-family: 'Playfair Display', serif;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* Grid Menu (4 Kolom x 4 Baris) */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(4, auto); 
+    gap: 25px; 
+    margin-top: 30px;
+}
+
+.menu-item {
+    background-color: #8B4513; /* Coklat saddlebrown */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid #A0522D;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    min-height: 80px; 
+}
+
+.menu-item:hover {
+    background-color: #A0522D; 
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Tombol Kembali (sama seperti tombol menu di index) */
+.button {
+    display: inline-block;
+    background-color: #A0522D;
+    color: #FDF5E6;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.5em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #8B4513; 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-button {
+    margin-top: 40px;
+}
+
+/* Responsif Menu */
+@media (max-width: 1024px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom di tablet */
+    }
+    .menu-container {
+        width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2em;
+    }
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di layar kecil */
+        gap: 20px;
+    }
+    .menu-container {
+        padding: 30px 40px;
+        width: 90%;
+    }
+    .button {
+        padding: 12px 25px;
+        font-size: 1.3em;
+    }
+}
